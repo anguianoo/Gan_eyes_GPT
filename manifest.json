@@ -1,0 +1,32 @@
+{
+    "name": "Hello Test Extensions",
+    "description": "Base Level Extension",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {},
+    "permissions": [
+        "scripting",
+        "storage"
+    ],
+    "host_permissions": [
+        "https://*.chatgpt.com/"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.chatgpt.com/"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ],
+    "icons": {
+        "32": "folder_icon.png"
+    },
+    "background": {
+        "service_worker": "service-worker.js",
+        "type": "module"
+    }
+}
